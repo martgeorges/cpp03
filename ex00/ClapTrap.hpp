@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:17:03 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/03 10:54:35 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/05 13:10:39 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
     unsigned int _energy_points;
     unsigned int _attack_damage;
 public:
-    //canonical form   copy and overload to add 
+    //Canonical form
     ClapTrap();
     ClapTrap(const ClapTrap &copy);
     ClapTrap(std::string name);

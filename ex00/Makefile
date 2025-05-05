@@ -6,7 +6,7 @@
 #    By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 11:16:02 by mgeorges          #+#    #+#              #
-#    Updated: 2025/04/28 11:16:17 by mgeorges         ###   ########.fr        #
+#    Updated: 2025/05/05 13:02:28 by mgeorges         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ C++		=	c++
 C++_FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRCS		=	main.cpp \
-			
+			ClapTrap.cpp
 				
 OBJS		=	$(SRCS:.cpp=.o)
 
