@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 07:51:11 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/06 10:51:06 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/06 11:27:01 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
 
 void ScavTrap::guardGate() {
     
+    std::cout << "ScavTrap is now in gate keeper mode" << std::endl;
 }
