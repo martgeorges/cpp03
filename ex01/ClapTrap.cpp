@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:17:15 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 13:02:26 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:07:11 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ClapTrap::~ClapTrap()
 }
 //Constructeur pour le nom
 ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) {
-    std::cout << "\033[33mClapTrap Constructor for the name \033[0m" << _name << std::endl;
+    std::cout << "\033[33mClapTrap Constructor called for the name \033[0m" << _name << std::endl;
 }
 //Opérateur de copie
 ClapTrap::ClapTrap(const ClapTrap &copy) {
