@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 10:26:02 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 13:35:08 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:15:33 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main(void) {
 	FragTrap fragclone(frag1);
 
 	std::cout << std::endl << "\033[34m---- ACTIONS VALIDES ----\033[0m" << std::endl;
-	clap1.attack("Bulbizar");
-	frag1.attack("Carapuce");
+	clap1.attack("frag1");
+	frag1.attack("clap1");
 	frag1.takeDamage(2);
 	frag1.beRepaired(1);
 	frag1.highFivesGuys();
