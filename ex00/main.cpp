@@ -6,45 +6,45 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:16:37 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 10:06:57 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 13:52:55 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main()
-{
-    //boucle pour tester jusqu'a 0 PV et voir ce que ca fait 
-    std::cout << "\n\033[34m--- Test 1: Attaque jusqu'à épuisement d'énergie ---\033[0m" << std::endl;
-    ClapTrap a("Attacker");
-    for (int i = 0; i < 12; ++i)
-        a.attack("Dummy");
-    
-    std::cout << "\n\033[34m--- Test 2: Mort et actions impossibles ---\033[0m" << std::endl;
-    ClapTrap b("Fragile");
-    b.takeDamage(10);
-    b.attack("Nobody");
-    b.beRepaired(3);
-    //testeur lorsque 
-    std::cout << "\n\033[34m--- Test 3: Reparation avec PV pratiquement au max ---\033[0m" << std::endl;
-    ClapTrap c("Healer");
-    c.takeDamage(1);
-    c.beRepaired(2);
-    c.beRepaired(1);
-    //testeur pour voir ce qui se passe quand on dépasse les pv et qu'on continue a réparer au dela
-    std::cout << "\n\033[34m--- Test 4: Max PV dépassé et réparation ---\033[0m" << std::endl;
-    ClapTrap d("RepairTester");
-    d.takeDamage(5);
+int main(void) {
+    std::cout << "\033[34m---- CONSTRUCTEURS ----\033[0m" << std::endl;
+    ClapTrap attacker("Attacker");
+    ClapTrap fragile("Fragile");
+    ClapTrap healer("Healer");
+    ClapTrap repairTester("RepairTester");
+    ClapTrap original("Original");
+    ClapTrap copy(original);
+    ClapTrap assigned;
+    assigned = original;
+
+    std::cout << std::endl << "\033[1;32m---- ACTIONS VALIDES ----\033[0m" << std::endl;
+    attacker.attack("idiot");
+    fragile.takeDamage(5);
+    healer.takeDamage(1);
+    healer.beRepaired(2);
+    repairTester.takeDamage(3);
+    repairTester.beRepaired(3);
+    copy.attack("CopyTarget");
+    assigned.attack("AssignedTarget");
+
+    std::cout << std::endl << "\033[1;31m---- ACTIONS INVALIDES / LIMITES ----\033[0m" << std::endl;
+    // Attacker vide son énergie
     for (int i = 0; i < 11; ++i)
-        d.beRepaired(1); //répare PV 1 par 1
-    //testeur pour les opérateur de copie et d'assignation 
-    std::cout << "\n\033[34m--- Test 5: testeur opérateur de copie et d'assignation ---\033[0m" << std::endl;
-    ClapTrap e("Original");
-    e.attack("Target");
-    ClapTrap f(e);
-    ClapTrap g;
-    g = e;
-    f.attack("CopyTarget");
-    g.attack("AssignedTarget");
+        attacker.attack("idiot");
+
+    //Fragile meurt et tente d'agir
+    fragile.beRepaired(5);
+
+    // RepairTester dépasse le max de PV pour tester le message d'erreur
+    for (int i = 0; i < 10; ++i)
+        repairTester.beRepaired(1);
+
+    std::cout << std::endl << "\033[34m---- DESTRUCTEURS ----\033[0m" << std::endl;
     return 0;
 }

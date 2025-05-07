@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 07:51:11 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 10:14:52 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 13:03:09 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
-    std::cout << "\033[33mScavTrap Assignation operator called\033[0m" << std::endl;
+    std::cout << "\033[33mScavTrap Assignment operator called\033[0m" << std::endl;
     this->_name = other._name;
     this->_hit_points = other._hit_points;
     this->_energy_points = other._energy_points;

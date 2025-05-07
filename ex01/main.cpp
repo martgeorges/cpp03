@@ -6,41 +6,33 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:16:37 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 10:21:20 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:43:54 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-int main()
-{
-    //test1 : création d'un scavtrap par défaut
-    std::cout << "\n\033[34m\n--- Test 1: Default Constructor ---\033[0m" << std::endl;
+int main(void) {
+    std::cout << "\033[34m---- CONSTRUCTEURS ----\033[0m" << std::endl;
     ScavTrap scav1;
-
-    //test 2: création ScavTrap + appel a guard gate pour tester
-    std::cout << "\n\033[34m\n--- Test 2: Name constructor + guardGate ---\033[0m" << std::endl;
-    ScavTrap scav2("Guardian");
-    scav2.guardGate();
-    
-    //test 3: test de l'opérateur d'assignation
-    std::cout << "\n\033[34m\n--- Test 3: Assignment operator ---\033[0m" << std::endl;
+    ScavTrap guardian("Guardian");
     ScavTrap scav3;
-    scav3 = scav2;
+    ScavTrap copy(guardian);
+    ScavTrap assigned;
+    assigned = guardian;
+    ScavTrap outOfGas("outOfGas");
+
+    std::cout << std::endl << "\033[1;32m---- ACTIONS VALIDES ----\033[0m" << std::endl;
+    guardian.guardGate();
+    scav3 = guardian;
     scav3.attack("Enemy");
+    copy.guardGate();
+    assigned.guardGate();
 
-    //test 4: test du copy constructor
-    std::cout << "\n\033[34m\n--- Test 4: copy constructor test ---\033[0m" << std::endl;
-    ScavTrap scav4(scav2);
-    scav4.guardGate();
+    std::cout << std::endl << "\033[1;31m---- ACTIONS INVALIDES / LIMITES ----\033[0m" << std::endl;
+    for (int i = 0; i < 101; ++i)
+        outOfGas.guardGate(); // Boucle jusqu'à plus d'énergie
 
-    //test 5: boucle jusqu'a ce qu'il n'y ai plus d'energie, et puis on test guardgate
-    std::cout << "\n\033[34m\n--- Test 5: loop to check when no energy left ---\033[0m" << std::endl;
-    ScavTrap scav5("outOfGas");
-    for (int i = 0; i < 101; ++i) {
-        scav5.guardGate();
-    }
-    
+    std::cout << std::endl << "\033[34m---- DESTRUCTEURS ----\033[0m" << std::endl;
     return 0;
 }

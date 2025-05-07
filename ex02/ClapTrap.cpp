@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:17:15 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/06 07:41:31 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 13:02:55 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy) {
 }
 //opérateur d'assignation -> copie les attributs privés vers l'objet courant
 ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
-    std::cout << "\033[33mClapTrap Assignation operator called\033[0m" << std::endl;
+    std::cout << "\033[33mClapTrap Assignment operator called\033[0m" << std::endl;
     this->_name = other._name;
     this->_hit_points = other._hit_points;
     this->_energy_points = other._energy_points;
