@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 07:51:11 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 10:03:08 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:18:43 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ ScavTrap::~ScavTrap() {
 
 //opérateur de copie
 ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {
-    std::cout << "\033[33mScavTrap" << copy._name << "copy constructor called\033[0m" << std::endl;
+    std::cout << "\033[33mScavTrap " << copy._name << " copy constructor called\033[0m" << std::endl;
     *this = copy;
 }
 
