@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 07:51:11 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 13:02:45 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:03:14 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
 void ScavTrap::attack(const std::string& target) {
     if (this->_energy_points > 0 && this->_hit_points > 0)
     {
-        std::cout << "\033[33mClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!\033[0m" << std::endl;
+        std::cout << "\033[33mScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!\033[0m" << std::endl;
         this->_energy_points--;
     }
     else if (this->_energy_points <= 0)
-        std::cout << "\033[31mClapTrap " << this->_name << " can't do any action, no more energy points left!\033[0m" << std::endl;
+        std::cout << "\033[31mScavTrap " << this->_name << " can't do any action, no more energy points left!\033[0m" << std::endl;
     else
         std::cout << "\033[31mClapTrap " << this->_name << " can't do any action, not enough hit points left!\033[0m" << std::endl;
 }
