@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:16:37 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 10:13:44 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:21:20 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
     std::cout << "\n\033[34m\n--- Test 2: Name constructor + guardGate ---\033[0m" << std::endl;
     ScavTrap scav2("Guardian");
     scav2.guardGate();
-
+    
     //test 3: test de l'opérateur d'assignation
     std::cout << "\n\033[34m\n--- Test 3: Assignment operator ---\033[0m" << std::endl;
     ScavTrap scav3;
