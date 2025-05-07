@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 07:51:11 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 15:03:48 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:28:00 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {
     *this = copy;
 }
 
+//opérateur d'assignation -> copie les attributs privés vers l'objet courant
 ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
     std::cout << "\033[33mScavTrap Assignment operator called\033[0m" << std::endl;
     this->_name = other._name;

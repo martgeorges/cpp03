@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 10:27:30 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 15:23:07 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:28:11 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy) {
     *this = copy;
 }
 
-//Assignment operator called 
+//opérateur d'assignation -> copie les attributs privés vers l'objet courant
 FragTrap& FragTrap::operator=(const FragTrap &other) {
     std::cout << "\033[33mScavTrap Assignment operator called\033[0m" << std::endl;
     this->_name = other._name;

@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 07:51:11 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 13:03:09 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:29:29 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ ScavTrap::ScavTrap(): ClapTrap() {
     std::cout << "\033[33mScavTrap Default constructor called\033[0m" << std::endl;
 }
 
+//Name constructor 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
     this->_hit_points = 100;
     this->_energy_points = 100;
@@ -38,6 +39,7 @@ ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {
     *this = copy;
 }
 
+//opérateur d'assignation -> copie les attributs privés vers l'objet courant
 ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
     std::cout << "\033[33mScavTrap Assignment operator called\033[0m" << std::endl;
     this->_name = other._name;
@@ -60,6 +62,7 @@ void ScavTrap::attack(const std::string& target) {
         std::cout << "\033[31mClapTrap " << this->_name << " can't do any action, not enough hit points left!\033[0m" << std::endl;
 }
 
+//affiche un message sur la sortie standard pour dire qu'on passe en gate keeper mode , et check qu'il y ait suffisament de HP, et de energy pts
 void ScavTrap::guardGate() {
     if (this->_energy_points == 0)
     {
