@@ -6,7 +6,7 @@
 /*   By: mgeorges <mgeorges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 10:27:30 by mgeorges          #+#    #+#             */
-/*   Updated: 2025/05/07 13:38:24 by mgeorges         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:23:07 by mgeorges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ FragTrap::~FragTrap() {
 }
 
 //copy constructor called
-FragTrap::FragTrap(const FragTrap &copy) {
+FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy) {
     std::cout << "\033[33mFragTrap " << copy._name << " copy constructor called\033[0m" << std::endl;
     *this = copy;
 }
@@ -50,7 +50,7 @@ FragTrap& FragTrap::operator=(const FragTrap &other) {
     return *this;
 }
 
-//request a positive high five!!
+//request a positive high five!! and do some checks
 void FragTrap::highFivesGuys(void) {
     if (this->_energy_points == 0)
     {
